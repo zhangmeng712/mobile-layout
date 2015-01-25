@@ -10,3 +10,13 @@ rem flex-box vh for mobile
 - problems and solving: http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/
 - example: https://blog.isotoma.com/2010/08/css3-flexbox/
 
+## em
+
+
+## image responsive layout
+
+- using rem to set width
+- using background-image
+
+
+

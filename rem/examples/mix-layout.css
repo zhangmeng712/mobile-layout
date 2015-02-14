@@ -1,0 +1,24 @@
+/*==============混合布局============*/
+.mix-layout {
+  width: 32rem;
+  font-size: 12px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 1.25rem;
+}
+.mix-layout .col-left,
+.mix-layout .col-right {
+  float: left;
+  box-sizing: border-box;
+}
+.mix-layout .col-left {
+  width: 14.7rem;
+  height: 14.7rem;
+  border: 1px solid #D8D8D8;
+  margin-right: 0.5rem;
+}
+.mix-layout .col-right {
+  width: 14.3rem;
+  height: 14.7rem;
+  border: 1px solid #D8D8D8;
+}

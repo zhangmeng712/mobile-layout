@@ -2,6 +2,7 @@
 rem flex-box vh for mobile
 ## rem layout for mobile
 - reference: https://github.com/jieyou/rem_layout
+- http://www.ghugo.com/mobile-h5-fluid-layout-for-iphone6/
 
 
 ## flex-box layout for mobile

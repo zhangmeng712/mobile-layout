@@ -35,7 +35,6 @@
             /(psdWidth/defaultRootFontSize)
             ,maxRootFontSize // html的font-size最大不超过设定的最大值。它的作用是，当用户用非常宽的屏幕（pad、pc）访问页面时，不至于使得根元素的font-size超过这个值。见图“show/wide_max_rem.jpg”
         )
-        debugger
         // alert('2 iW_'+w.innerWidth+'  sw_'+w.screen.width+'  dpr_'+devicePixelRatio+'  or_'+w.orientation+'  gbcrw_'+d.documentElement.getBoundingClientRect().width)
         if(rootFontSize != lastRootFontSize){
             // return
@@ -55,8 +54,8 @@
     }
 
     psdWidth = psdWidth || 320
-    defaultRootFontSize = defaultRootFontSize || 16
-    maxRootFontSize = maxRootFontSize || 32
+    defaultRootFontSize = defaultRootFontSize || 20
+    maxRootFontSize = maxRootFontSize || 33.75
     head.appendChild(style)
 
     d[on]('DOMContentLoaded',setRem,false)
@@ -77,5 +76,5 @@
 })(
     320, // 设置设计稿基准宽度
     20, // 设置默认根元素font-size 最好设置为16，因为浏览器默认的值就是16，这样代码失效或尚未起效时，不会有布局问题
-    33.75 // 设置最大根元素font-size 它的作用是，当用户用非常宽的屏幕（pad、pc）访问页面时，不至于使得根元素的font-size超过这个值
+    33.73 // 设置最大根元素font-size 它的作用是，当用户用非常宽的屏幕（pad、pc）访问页面时，不至于使得根元素的font-size超过这个值
 )

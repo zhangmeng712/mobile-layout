@@ -1,0 +1,89 @@
+.page-content {
+    font-family: Helvetica, 'Hiragino Sans GB', arial, sans-serif;
+    font-size: 12px;
+    background-color: #F1F1F1;
+}
+.page-content header {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5rem;
+}
+.page-content .clearfix {
+    *zoom: 1;
+}
+.page-content .clearfix:before,
+.page-content .clearfix:after {
+    display: table;
+    content: "";
+}
+.page-content .clearfix:after {
+    clear: both;
+}
+
+/*flexbox实现布局*/
+
+/*4栏*/
+
+
+
+/*混合*/
+
+.mix-layout {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 20px;
+    padding: 0 3.906%;
+    margin: 0 auto;
+    max-width:540px;
+}
+.mix-layout .col-left, .mix-layout .col-right {
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
+.mix-layout .col-left {
+    width:50%;
+    background-image: url('http://gtms04.alicdn.com/tps/i2/TB1uQMzGVXXXXbqaXXXXXXXXXXX_!!0-item_pic.jpg_300x300.jpg');
+    padding-top:50%;
+    background-size:100% 100%;
+    border: 1px solid #D8D8D8;
+}
+
+.mix-layout .col-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+}
+
+.mix-layout .col-right .row-top, .mix-layout .col-right .row-bottom {
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    background-size:100% 100%;
+    margin-left: 3.4%;
+    border: 1px solid #D8D8D8;
+}
+
+.mix-layout .col-right .row-top {
+    background-image: url('http://img01.taobaocdn.com/bao/uploaded/i2/TB1fL7CHXXXXXXrXVXXSutbFXXX.jpg');
+    margin-bottom:3.4%;
+}
+.mix-layout .col-right .row-bottom {
+    background-image: url('http://img01.taobaocdn.com/bao/uploaded/i2/TB1ml3nHXXXXXcQXFXXSutbFXXX.jpg');
+}
+

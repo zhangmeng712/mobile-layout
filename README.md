@@ -1,4 +1,5 @@
 # mobile-layout
+
 rem flex-box vh for mobile
 ## rem layout for mobile
 - reference: https://github.com/jieyou/rem_layout
@@ -18,6 +19,11 @@ rem flex-box vh for mobile
 
 - using rem to set width
 - using background-image
+
+
+## reset css
+- Normalize.css
+- Basic reset [reset.css](reset.css)
 
 
 

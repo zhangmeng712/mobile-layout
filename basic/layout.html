@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多方法实现等分布局</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link href="../reset.css" type="text/css" rel="stylesheet"/>
+    <link href="layout.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="page-content">
+    <header>
+        <div>Divided Layout and Alignment</div>
+    </header>
+
+    <div class="table-cell-layout">
+        <h2 class="h-title">table-cell</h2>
+
+        <div class="parent">
+            <div class="item">天猫国际</div>
+            <div class="item">旅行国际</div>
+            <div class="item">喵生鲜</div>
+            <div class="item last">淘宝电影</div>
+        </div>
+    </div>
+
+    <div class="display-layout mt20">
+        <h2 class="h-title">display:inline-block</h2>
+
+        <div class="parent">
+            <div class="item">天猫国际</div>
+            <div class="item">旅行国际</div>
+            <div class="item">喵生鲜</div>
+            <div class="item last">淘宝电影</div>
+        </div>
+    </div>
+
+
+    <div class="float-layout mt20">
+        <h2 class="h-title">float-layout</h2>
+
+        <div class="parent clearfix">
+            <div class="item">天猫国际</div>
+            <div class="item">旅行国际</div>
+            <div class="item">喵生鲜</div>
+            <div class="item last">淘宝电影</div>
+        </div>
+    </div>
+
+
+    <div class="flexbox-layout mt20">
+        <h2 class="h-title">flexbox-layout</h2>
+
+        <div class="parent">
+            <div class="item">天猫国际</div>
+            <div class="item">旅行国际</div>
+            <div class="item">喵生鲜</div>
+            <div class="item last">淘宝电影</div>
+        </div>
+
+        <div class="parent mt20">
+            <div class="item">天猫国际</div>
+            <div class="item">旅行国际</div>
+            <div class="item">喵生鲜</div>
+        </div>
+    </div>
+
+    <div class="center-layout">
+        <h2 class="h-title">Vertical & Horizontal center width flexbox</h2>
+        <div class="center-parent">
+            <div class="center-item"></div>
+        </div>
+    </div>
+
+
+    <div class="tanslate-center-layout">
+        <h2 class="h-title">Vertical & Horizontal center width tanslate</h2>
+        <div class="center-parent">
+            <div class="center-item"></div>
+        </div>
+    </div>
+
+
+
+    <div class="flexbox-between-layout mt20" style="margin-bottom: 20px;">
+        <h2 class="h-title">flexbox-space-between-layout</h2>
+        <div class="parent">
+            <div class="item">天猫国际</div>
+            <div class="item">旅行国际</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

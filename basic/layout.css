@@ -1,0 +1,203 @@
+.page-content {
+    font-family: Helvetica, 'Hiragino Sans GB', arial, sans-serif;
+    font-size: 12px;
+    background-color: #F1F1F1;
+    width: 100%;
+    height:100%;
+    min-height:480px;
+}
+.page-content header {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5rem;
+}
+.page-content .clearfix {
+    *zoom: 1;
+}
+.page-content .clearfix:before,
+.page-content .clearfix:after {
+    display: table;
+    content: "";
+}
+.page-content .clearfix:after {
+    clear: both;
+}
+
+.page-content .h-title {
+    font-size: 16px;
+    margin: 15px 0;
+
+}
+.mt20 {
+    margin-top: 20px;
+}
+
+/*===================等分布局实现==============*/
+
+.item {
+    font-size: 14px;
+    padding: 7px 10px;
+    background: #fff;
+    border-right:1px solid #D8D8D8;
+}
+.last {
+    border-right:none;
+}
+
+
+/*tablecell*/
+.table-cell-layout .parent {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.table-cell-layout .parent .item {
+    display: table-cell;
+    overflow: hidden;
+}
+
+
+/*display-inline*/
+.display-layout .parent {
+    font-size:0;
+    text-align: center;
+}
+
+.display-layout .parent .item{
+    display: inline-block;
+    width:25%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+/*float*/
+
+.float-layout .parent {
+    text-align: center;
+}
+
+.float-layout .parent .item{
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+/*需要清浮动或者定高*/
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+
+/*flexbox*/
+.flexbox-layout .parent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    text-align: center;
+
+}
+
+.flexbox-layout .parent .item{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+
+}
+
+.center-layout .center-parent {
+    border: 1px solid #D8D8D8;
+    margin: 25px;
+    height: 200px;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+
+
+    /*Flexbox垂直居中*/
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    /*Flexbox水平居中*/
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+
+
+}
+.center-layout .center-parent .center-item{
+    width: 100px;
+    height:100px;
+    background-image: url('http://gi3.md.alicdn.com/bao/uploaded/i3/1791947350/TB2hcmMbFXXXXbaXXXXXXXXXXXX_!!1791947350.jpg_480x480q50.jpg');
+    background-size:100% 100%;
+
+}
+
+
+.tanslate-center-layout .center-parent {
+    border: 1px solid #D8D8D8;
+    margin: 25px;
+    height: 200px;
+    position: relative;
+}
+
+
+.tanslate-center-layout .center-parent .center-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height:100px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-image: url('http://gi3.md.alicdn.com/bao/uploaded/i3/1791947350/TB2hcmMbFXXXXbaXXXXXXXXXXXX_!!1791947350.jpg_480x480q50.jpg');
+    background-size:100% 100%;
+}
+
+
+/*利用flexbox实现两端对齐*/
+
+.flexbox-between-layout .parent{
+    margin: 0 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.flexbox-between-layout .parent .item{
+    width:30%;
+    height:200px;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+
+
+
+}
+
+
+
+
+
+

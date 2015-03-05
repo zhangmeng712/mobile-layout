@@ -59,16 +59,19 @@
             border-bottom: 1px solid #E0F7FF;
             padding: 5px 7px;
         }
+        .none {
+            display: none;
+        }
 
     </style>
 </head>
 <body>
 <div class="container">
-    <h2>REM Calculator</h2>
+    <h2>(R)EM Calculator</h2>
     <div class="bs-example bs-example-form">
         <form>
             <div class="input-group">
-                <span class="input-group-addon">Your Website HTML FontSize(unit px no less then 16px):</span>
+                <span class="input-group-addon">Your Website HTML FontSize / Basic FontSize for BODY (unit px no less then 16px):</span>
                 <input type="text" class="form-control" placeholder="20" id="J_fontSize">
             </div>
 
@@ -89,18 +92,36 @@
             </div>
 
             <a class="btn btn-primary btn-submit btn-lg" id="J_submitBtn" href="#" role="button">Calculate</a>
+            <a class="btn btn-success btn-submit btn-lg" id="J_exampleBtn" href="#" role="button">Example</a>
+            <a class="btn btn-success btn-danger btn-lg" href="https://github.com/zhangmeng712/mobile-layout/tree/master/rem" role="button" target="_blank">GIT</a>
 
         </form>
     </div>
     <div class="highlight">
         <div class="title">
-            Code
+            Code For REM
         </div>
         <div class="result">
             <code class="js-result diff hljs" id="J_codeResult"></code>
         </div>
+        <div id="J_example" class="none">
+            <div class="title">
+                Example
+            </div>
+            <div>
+                <img src="../image/mix-layout-mark-final.jpg" width="350px" height="240px"/>
+            </div>
+            <div class="title">
+                <a href="examples/mix-layout.html" target="_blank">DEMO</a>
+            </div>
+            <div>
+                <p data-height="268" data-theme-id="11872" data-slug-hash="myjZGR" data-default-tab="result" data-user="zhangmeng712" class='codepen'>See the Pen <a href='http://codepen.io/zhangmeng712/pen/myjZGR/'>rem mobile mix layout</a> by zhangmeng (<a href='http://codepen.io/zhangmeng712'>@zhangmeng712</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+
+        </div>
         <div class="title">
-            PxResult
+            Px Result
         </div>
         <div class="result">
             <ul class="px-result" id="J_pxResult">
@@ -117,7 +138,6 @@
         var Empty = '';
         var SEP = ',';
         var CompressorPrefix = '!function(e,n,t){function i(){var i=Math.min((f?m[l]().width:s.innerWidth)/(e/n),t);i!=g&&(h.innerHTML="html{font-size:"+i+"px!important;"+E+"}",g=i)}function o(){clearTimeout(d),d=setTimeout(i,500)}var d,a=document,m=a.documentElement,s=window,u="addEventListener",l="getBoundingClientRect",r="pageshow",c=a.head||a.getElementsByTagName("HEAD")[0],h=a.createElement("STYLE"),p="text-size-adjust:100%;",E="-webkit-"+p+"-moz-"+p+"-ms-"+p+"-o-"+p+p,f=l in m,g=null;e=e||320,n=n||20,t=t||33.75,c.appendChild(h),a[u]("DOMContentLoaded",i,!1),"on"+r in s?s[u](r,function(e){e.persisted&&o()},!1):s[u]("load",o,!1),s[u]("resize",o,!1),i()}';
-
         var calculate = function () {
             var font = $('#J_fontSize').val() || 20;
             var psdWidth = $('#J_psdWidth').val() || 640;
@@ -132,7 +152,8 @@
             $.each(pxList, function(i, v) {
                 var px = parseInt(v);
                 var rem =  parseFloat(( px / base  ).toPrecision(Accuracy));
-                pxResult.append( "<li>" + v + "px = " +  rem + "rem </li>" );
+                var em =  parseFloat(( px / parseInt(font, 10)  ).toPrecision(Accuracy));
+                pxResult.append( "<li>" + v + "px = " +  rem + "rem = "  + em + "em </li>" );
             });
 
             var maxRem =  ((parseInt(font, 10) * parseInt(maxWidth,10))/Psdbasic).toPrecision(Accuracy);
@@ -140,12 +161,33 @@
             codeResult.html(CompressorPrefix + code);
 
         };
+        var showExample = function () {
+            $('#J_example').show();
 
+        };
+
+        var setExample = function () {
+            $('#J_pxList').val('10,25,142,294,286,640');
+        };
+
+        var clearExample = function () {
+            $('#J_example').hide();
+        };
         var btn = $('#J_submitBtn');
-        $(btn).on('click', function() {
+        var exampleBtn = $('#J_exampleBtn');
+        btn.on('click', function(e) {
+            e.preventDefault();
+            clearExample();
             calculate();
         });
         calculate();
+
+        exampleBtn.on('click', function(e) {
+            e.preventDefault();
+            setExample();
+            calculate();
+            showExample();
+        });
 
     })
 </script>

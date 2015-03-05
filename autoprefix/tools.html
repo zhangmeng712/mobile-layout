@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--
+    Created using JS Bin
+    http://jsbin.com
+
+    Copyright (c) 2015 by simevidas (http://jsbin.com/gufoko/3/edit)
+
+    Released under the MIT license: http://jsbin.mit-license.org
+    -->
+    <meta name="robots" content="noindex">
+    <title>Autoprefixer Playground</title>
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+
+    <style id="jsbin-css">
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+
+        }
+
+        *, body, button, input, textarea, select {
+            text-rendering: optimizelegibility;
+            font-size: 100%;
+        }
+
+        a {
+            color: #07c;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+        }
+
+        main {
+            margin: 1em 1em 0;
+            flex-grow: 1;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+        main > div {
+            width: calc(50% - .5em);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+        h2 em {
+            display: inline-block;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            padding: .3em .5em;
+        }
+
+        .io {
+            resize: none;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: .5em;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+        }
+        .io p {
+            padding-bottom: .5em;
+        }
+        .io textarea {
+            flex-grow: 1;
+            resize: none;
+            padding: .5em .8em;
+            /*font-family: Consolas, monospace;*/
+        }
+
+        #lblInvalid {
+            display: none;
+            float: right;
+            color: red;
+            font-weight: bold;
+            padding: .4em .4em 0;
+        }
+
+        .inactive {
+            color: gray;
+        }
+
+        aside {
+            margin: .5em 1em 0;
+            display: flex;
+            align-items: baseline;
+        }
+
+        aside > * {
+            margin: 0 .15em;
+        }
+
+        #options {
+            padding: 2px 4px;
+            width: 300px;
+            flex-grow: 1;
+        }
+
+        footer p {
+            padding: .8em;
+            text-align: center;
+        }
+
+        /* Ugly code. Let me know how this can be made DRY. */
+        .part1 em {
+            background-color: #1b809e;
+        }
+        .part1 .io {
+            border-left-color: #1b809e;
+        }
+
+        .part2 em {
+            background-color: #ce4844;
+        }
+        .part2 .io {
+            border-left-color: #ce4844;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <div class="part1">
+        <h2>
+            <em>CSS Input</em>
+        </h2>
+        <div class="io">
+            <p>
+                <button class="btn btn-info" id="btnClear" disabled>Clear field</button>
+                <button class="btn btn-success" id="btnExample">Show Flex Example</button>
+            </p>
+            <textarea id="input" autofocus spellcheck="false"></textarea>
+        </div>
+    </div>
+    <div class="part2">
+        <h2>
+            <em>AutoPrefix Output</em>
+        </h2>
+        <div class="io">
+            <p>
+                <button class="btn btn-warning" id="btnSelectAll" disabled>Select all</button>
+                <span id="lblInvalid">Invalid input</span>
+            </p>
+            <textarea id="output" spellcheck="false"></textarea>
+        </div>
+    </div>
+</main>
+<aside>
+    <div class="input-group">
+        <input type="text" class="form-control" id="options" style="width:800px;margin-right:15px">
+        <button class="btn btn-default" id="btnUseDefaults">Use defaults</button>
+        <a href="https://github.com/postcss/autoprefixer#browsers" target="_blank" style="margin-left:10px">about</a>
+    </div>
+
+</aside>
+<footer>
+    <p>
+        <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a>
+    </p>
+</footer>
+<script type="text/plain" id="txtExample">
+    .center-layout {
+        /*Flexbox布局*/
+        display: flex;
+        /*垂直居中*/
+        align-items: center;
+        /*水平居中*/
+        justify-content: center;
+    }
+  </script>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js"></script>
+<script>
+    var input = $('#input')[0];
+    var output = $('#output')[0];
+    var btnClear = $('#btnClear')[0];
+    var btnExample = $('#btnExample')[0];
+    var btnSelectAll = $('#btnSelectAll')[0];
+    var lblInvalid = $('#lblInvalid')[0];
+    var txtExample = $('#txtExample').text();
+    var inputOptions = $('#options')[0];
+    var btnUseDefaults = $('#btnUseDefaults')[0];
+
+    var defaultOptions = '> 1%, last 2 versions, Firefox ESR, Opera 12.1';
+
+    function process() {
+        var options = inputOptions.value.split(',').map(function (s) { return s.trim(); });
+
+        try {
+            var compiled = autoprefixer({ browsers: options }).process(input.value, { safe: true });
+            output.value = compiled.css;
+
+            btnSelectAll.disabled = output.value.trim().length === 0;
+            $(output).removeClass('inactive');
+            $(lblInvalid).hide();
+        } catch (err) {
+            console.log(err);
+            btnSelectAll.disabled = true;
+            $(output).addClass('inactive');
+            $(lblInvalid).show();
+        }
+    }
+
+    $(input).on('keyup paste', function () {
+        process();
+        btnClear.disabled = this.value.trim().length === 0;
+    });
+
+    $(inputOptions).on('keyup paste', function () {
+        process();
+    });
+
+    $(btnClear).on('click', function () {
+        input.value = '';
+        this.disabled = true;
+        process('');
+        input.focus();
+    });
+
+    $(btnExample).on('click', function () {
+        input.value = txtExample;
+        btnClear.disabled = false;
+        process();
+    });
+
+    $(btnSelectAll).on('click', function () {
+        output.select();
+    });
+
+    $(btnUseDefaults).on('click', function () {
+        inputOptions.value = defaultOptions;
+        process();
+    }).trigger('click');
+</script>
+</body>
+</html>

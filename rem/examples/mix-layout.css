@@ -1,10 +1,35 @@
+.page-content {
+  font-family: Helvetica, 'Hiragino Sans GB', arial, sans-serif;
+  font-size: 12px;
+  background-color: #F1F1F1;
+}
+.page-content header {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5rem;
+}
+.page-content .clearfix {
+  *zoom: 1;
+}
+.page-content .clearfix:before,
+.page-content .clearfix:after {
+  display: table;
+  content: "";
+}
+.page-content .clearfix:after {
+  clear: both;
+}
 /*==============混合布局============*/
 .mix-layout {
-  width: 32rem;
-  font-size: 12px;
+  width: 16rem;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 1.25rem;
+  padding: 0 .625rem;
 }
 .mix-layout .col-left,
 .mix-layout .col-right {
@@ -12,13 +37,67 @@
   box-sizing: border-box;
 }
 .mix-layout .col-left {
-  width: 14.7rem;
-  height: 14.7rem;
+  width: 7.35rem;
+  height: 7.35rem;
   border: 1px solid #D8D8D8;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
+  background-size: contain;
+  background-image: url("http://gtms04.alicdn.com/tps/i2/TB1uQMzGVXXXXbqaXXXXXXXXXXX_!!0-item_pic.jpg_300x300.jpg");
 }
 .mix-layout .col-right {
-  width: 14.3rem;
-  height: 14.7rem;
+  width: 7.15rem;
+  height: 7.35rem;
+}
+.mix-layout .col-right .row-top,
+.mix-layout .col-right .row-bottom {
   border: 1px solid #D8D8D8;
+  box-sizing: border-box;
+  height: 3.55rem;
+}
+.mix-layout .col-right .row-top img,
+.mix-layout .col-right .row-bottom img {
+  width: 100%;
+}
+.mix-layout .col-right .row-top {
+  margin-bottom: 0.25rem;
+}
+.four-col-layout {
+  width: 16rem;
+  margin: 0.725rem auto 0;
+  box-sizing: border-box;
+  padding: 0 1.025rem;
+  margin-bottom: 0.25rem;
+}
+.four-col-layout .row-top,
+.four-col-layout .row-bottom {
+  width: 100%;
+  box-sizing: border-box;
+  height: 4.15rem;
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+.four-col-layout .item {
+  height: 4.15rem;
+  margin-right: 0.7rem;
+  float: left;
+  position: relative;
+}
+.four-col-layout .item .pic {
+  border: 1px solid #d2d2d2;
+  border-radius: 0.25rem;
+  width: 2.95rem;
+  height: 2.95rem;
+  box-sizing: border-box;
+}
+.four-col-layout .item .title {
+  position: absolute;
+  top: 3.625rem;
+  left: 0;
+  text-align: center;
+  width: 2.95rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+}
+.four-col-layout .item:nth-child(4) {
+  margin-right: 0;
 }

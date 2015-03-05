@@ -2,20 +2,74 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>混合布局</title>
+    <title>REM实现混合布局</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <link href="../../reset.css" type="text/css" rel="stylesheet"/>
     <link href="mix-layout.css" type="text/css" rel="stylesheet"/>
-    <script src="../rem.js"></script>
+    <script>
+        !function(e,n,t){function i(){var i=Math.min((f?m[l]().width:s.innerWidth)/(e/n),t);i!=g&&(h.innerHTML="html{font-size:"+i+"px!important;"+E+"}",g=i)}function o(){clearTimeout(d),d=setTimeout(i,500)}var d,a=document,m=a.documentElement,s=window,u="addEventListener",l="getBoundingClientRect",r="pageshow",c=a.head||a.getElementsByTagName("HEAD")[0],h=a.createElement("STYLE"),p="text-size-adjust:100%;",E="-webkit-"+p+"-moz-"+p+"-ms-"+p+"-o-"+p+p,f=l in m,g=null;e=e||320,n=n||20,t=t||33.75,c.appendChild(h),a[u]("DOMContentLoaded",i,!1),"on"+r in s?s[u](r,function(e){e.persisted&&o()},!1):s[u]("load",o,!1),s[u]("resize",o,!1),i()}(320,20,33.75);
+    </script>
 </head>
 <body>
-    <h1>使用rem实现布局</h1>
-    <div class="mix-layout">
-        <div class="col-left">11</div>
-        <div class="col-right">
-            <div>22</div>
-            <div>33</div>
-        </div>
+    <div class="page-content">
+        <header>
+            <div>REM Layout</div>
+        </header>
+
+        <!--四栏布局-->
+        <section class="four-col-layout">
+            <div class="row-top clearfix">
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">我的淘宝</div>
+                </div>
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">天猫</div>
+                </div>
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">聚划算</div>
+                </div>
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">集市</div>
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">我的淘宝</div>
+                </div>
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">天猫</div>
+                </div>
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">聚划算</div>
+                </div>
+                <div class="item">
+                    <div class="pic"></div>
+                    <div class="title">集市</div>
+                </div>
+            </div>
+        </section>
+
+        <!--混合布局-->
+        <section class="mix-layout clearfix">
+            <div class="col-left"></div>
+            <div class="col-right">
+                <div class="row-top">
+                    <img src="http://img01.taobaocdn.com/bao/uploaded/i2/TB1fL7CHXXXXXXrXVXXSutbFXXX.jpg"/>
+                </div>
+                <div class="row-bottom">
+                    <img src="http://img01.taobaocdn.com/bao/uploaded/i2/TB1ml3nHXXXXXcQXFXXSutbFXXX.jpg">
+                </div>
+            </div>
+        </section>
+
+
     </div>
 </body>
 </html>

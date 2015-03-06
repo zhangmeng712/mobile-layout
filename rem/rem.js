@@ -40,7 +40,7 @@
             // return
             style.innerHTML =
                 'html{'
-                +	'font-size:'+rootFontSize+'px!important;' // 20=320/16 // 取16为默认html的font-size是因为浏览器都默认为16，不会导致抖动
+                +	'font-size:'+rootFontSize+'px!important;' // 16=320/20
                 +	textSizeAdjustCSSAll
                 +'}'
             lastRootFontSize = rootFontSize
@@ -75,6 +75,6 @@
     setRem()
 })(
     320, // 设置设计稿基准宽度
-    20, // 设置默认根元素font-size 最好设置为16，因为浏览器默认的值就是16，这样代码失效或尚未起效时，不会有布局问题
+    20, // 设置默认根元素font-size
     33.73 // 设置最大根元素font-size 它的作用是，当用户用非常宽的屏幕（pad、pc）访问页面时，不至于使得根元素的font-size超过这个值
-)
+);

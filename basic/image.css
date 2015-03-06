@@ -1,0 +1,77 @@
+.page-content {
+    font-family: Helvetica, 'Hiragino Sans GB', arial, sans-serif;
+    font-size: 12px;
+    background-color: #F1F1F1;
+    width: 100%;
+    height:100%;
+    min-height:480px;
+}
+.page-content header {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5rem;
+}
+.page-content .clearfix {
+    *zoom: 1;
+}
+.page-content .clearfix:before,
+.page-content .clearfix:after {
+    display: table;
+    content: "";
+}
+.page-content .clearfix:after {
+    clear: both;
+}
+
+.page-content .h-title {
+    font-size: 16px;
+    margin: 15px 0;
+
+}
+.mt20 {
+    margin-top: 20px;
+}
+
+/*图片布局*/
+
+
+.padding-image-responsive{position: relative; padding-top: 31.3%; height: 0; overflow: hidden;}
+.padding-image-responsive img{position: absolute; top: 0; width: 100%;}
+
+.padding-background-responsive {
+    background-image: url('http://gw.alicdn.com/tps/i2/TB1cHB1HpXXXXcOXpXXdIns_XXX-1125-352.jpg_q50.jpg');
+    width:100%;
+    height:0;
+    padding-top:31.3%;
+    background-size:100% 100%;
+}
+
+.background-image .qq {
+    width: 134px;
+    height: 44px;
+    background: url(http://mat1.gtimg.com/www/images/qq2012/qqlogo_1x.png) no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+    .background-image .qq {
+        background-image: url(http://mat1.gtimg.com/www/images/qq2012/qqlogo_2x.png);
+        background-size: 134px 44px;
+    }
+}
+
+.background-image-test {
+    width: 200px;
+    height:200px;
+    background-image: url('http://img02.taobaocdn.com/bao/uploaded/i2/TB1_MjlGVXXXXapaXXXXXXXXXXX_!!0-item_pic.jpg_q50.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+

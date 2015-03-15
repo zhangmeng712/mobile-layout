@@ -25,7 +25,9 @@
  - meta viewport
  	-  width:sets the width of the layout view port to the indicated value. device-width
  	-  initial-scale: sets the initial zoom factor of the page and the width of the layout viewport. 
-	-  minimum-scale: sets the minimum zoom level (how much the user can zoom out).	-  maximum-scale: sets the maximum zoom level (how much the user can zoom in).	-  user-scalable: prevents user zooming when set to no. This is evil and we will demonstratively ignore it.
+	-  minimum-scale: sets the minimum zoom level (how much the user can zoom out).
+	-  maximum-scale: sets the maximum zoom level (how much the user can zoom in).
+	-  user-scalable: prevents user zooming when set to no. This is evil and we will demonstratively ignore it.
  - 使用viewport和devicePixelRatio实现兼容retina屏幕的像素
    <img src="image/meta-1px.jpg" width="400px"/>
    <img src="image/meta-1px-retina.jpg" width="400px"/>
@@ -64,7 +66,7 @@
 - 相对于百分比布局，控制局部尺寸更加方便
 - 参考 [淘宝无线首页](http://m.taobao.com/)
 
-### [代码](rem/rem.js)
+### [代码](https://github.com/zhangmeng712/mobile-layout/rem/rem.js)
 
 - 需要设置基准元素还有最大的字体元素（防止全屏）
 - 核心计算公式
@@ -74,7 +76,7 @@
 - html font size的设置 拼css完成 而不是document.documentElement.style.fontSize
 - 绑定处理 DOMContentLoaded load resize 从未设置viewport的网页进入重新设置一下 pageshow/load persisted(是否后退进入)
 
-### [实战](rem/rem.html)
+### [实战](http://dj1211.com/examples/mobile-layout/rem/rem.html)
 
 ### 无线团队的lib.flexible
 - 1 [代码](https://github.com/amfe/lib.flexible)
@@ -148,21 +150,21 @@
 ### 兼容性
 - [flexbugs](https://github.com/philipwalton/flexbugs)
 
-### [工具](autoprefix/tools.html)
+### [工具](http://dj1211.com/examples/mobile-layout/autoprefix/tools.html)
 
 ### 实战
 - [两栏布局](http://localhost/mbp-new/debug.html#)
 
-  <img src="image/flex-box-subway.jpg" width="160px"/>
+  <img src="http://dj1211.com/examples/mobile-layout/image/flex-box-subway.jpg" width="160px"/>
   
 - [复杂布局](flexbox/examples/mix-layout.html)  
 
-  <img src="image/mix-layout.jpg">
+  <img src="http://dj1211.com/examples/mobile-layout/image/mix-layout.jpg">
 
 	
 ## 四、常见布局-等分和居中
 
-- [demo](basic/layout.html)
+- [demo](http://dj1211.com/examples/mobile-layout/basic/layout.html)
 
 ## 五、常见布局-图片布局
 
@@ -171,17 +173,17 @@
 - srcset
 - 图片优化（压缩比和Webp）
 	- [webp](http://zhitu.tencent.com/) 
-	- [淘宝解决方案](http://www.atatech.org/articles/6628)
+	- [淘宝解决方案 内网](http://www.atatech.org/articles/6628)
 
 ## 六、代码转化为模板建立解决方案
 - [solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
-- [demo](index.html)
+- [demo](http://dj1211.com/examples/mobile-layout/index.html)
 
 ## 七、其他
 
 - [browserstack](http://www.browserstack.com/)
 
-<img src="image/debug-tools.jpg" width="600px"/>
+<img src="http://dj1211.com/examples/mobile-layout/image/debug-tools.jpg" width="600px"/>
 
 
 
